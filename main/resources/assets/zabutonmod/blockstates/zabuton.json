@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "zabutonmod:zabuton" },
+        "facing=south": { "model": "zabutonmod:zabuton", "y": 180 },
+        "facing=west":  { "model": "zabutonmod:zabuton", "y": 270 },
+        "facing=east":  { "model": "zabutonmod:zabuton", "y": 90 }
+    }
+}

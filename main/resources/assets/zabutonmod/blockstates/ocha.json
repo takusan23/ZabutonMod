@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "zabutonmod:ocha" },
+        "facing=south": { "model": "zabutonmod:ocha", "y": 180 },
+        "facing=west":  { "model": "zabutonmod:ocha", "y": 270 },
+        "facing=east":  { "model": "zabutonmod:ocha", "y": 90 }
+    }
+}
