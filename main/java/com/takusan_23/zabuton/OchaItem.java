@@ -18,14 +18,14 @@ import net.minecraft.world.World;
 public class OchaItem extends ItemBlock{
 
 
-/*	   *//** Number of ticks to run while 'EnumAction'ing until result. *//*
-    public final int itemUseDuration;
-    *//** The amount this food item heals the player. *//*
+	   //** Number of ticks to run while 'EnumAction'ing until result. *//*
+//    public final int itemUseDuration;
+    //** The amount this food item heals the player. *//*
     private final int healAmount;
-    private final float saturationModifier;
-    *//** Whether wolves like this food (true for raw and cooked porkchop). *//*
-    private final boolean isWolfsFavoriteMeat;
-*/    /** If this field is true, the food can be consumed even if the player don't need to eat. */
+//    private final float saturationModifier;
+    //** Whether wolves like this food (true for raw and cooked porkchop). *//*
+//    private final boolean isWolfsFavoriteMeat;
+    /** If this field is true, the food can be consumed even if the player don't need to eat. */
     private boolean alwaysEdible;
     /** represents the potion effect that will occurr upon eating this food. Set by setPotionEffect */
     private PotionEffect potionId;
@@ -34,6 +34,8 @@ public class OchaItem extends ItemBlock{
 
     public OchaItem(Block block) {
 		super(block);
+        this.healAmount = 1;
+
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
@@ -66,7 +68,7 @@ public class OchaItem extends ItemBlock{
             //worldIn.playSound((EntityPlayer)null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
             //this.onFoodEaten(stack, worldIn, entityplayer);
             //entityplayer.addStat(StatList.getObjectUseStats(this));
-            entityplayer.addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST,500,5));
+            entityplayer.addPotionEffect(new PotionEffect(MobEffects.REGENERATION,100,2));
 
             if (entityplayer instanceof EntityPlayerMP)
             {
@@ -91,7 +93,7 @@ public class OchaItem extends ItemBlock{
      */
     public int getMaxItemUseDuration(ItemStack stack)
     {
-        return 8;
+        return 16;
     }
 
     /**
@@ -109,17 +111,27 @@ public class OchaItem extends ItemBlock{
     {
         ItemStack itemstack = playerIn.getHeldItem(handIn);
 
-        if (playerIn.canEat(this.alwaysEdible))
+        //if (playerIn.canEat(this.alwaysEdible))
         {
             playerIn.setActiveHand(handIn);
             return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
         }
-        else
+/*        else
         {
             return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
         }
+*/    }
+
+    public int getHealAmount(ItemStack stack)
+    {
+        return this.healAmount;
     }
+
+
 /*
+ *
+ *
+ *
     public int getHealAmount(ItemStack stack)
     {
         return this.healAmount;

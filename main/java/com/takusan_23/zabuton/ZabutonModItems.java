@@ -9,15 +9,18 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class ZabutonModItems {
 	public static Item OchaItem;
+	public static Item Yunomi;
 
 	public static void init()
 	{
 		OchaItem = new OchaItem(ZabutonModBlocks.Ocha).setCreativeTab(ZabutonMod.ZabutonModTab).setUnlocalizedName("Ocha");
+		Yunomi = new Item().setCreativeTab(ZabutonMod.ZabutonModTab).setUnlocalizedName("Yumomi");
 	}
 
 	public static void register()
 	{
 		registerItem(OchaItem, "ochaitem");
+		registerItem(Yunomi, "yumomi");
 	}
 
 	public static void registerItem(Item item, String string)
@@ -29,6 +32,7 @@ public class ZabutonModItems {
 	public static void registerRenders()
 	{
 		registerRender(OchaItem);
+		registerRender(Yunomi);
 	}
 
 	public static void registerRender(Item item)
