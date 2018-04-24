@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
-	"textures": {"0": "Desktop/ocha"},
+	"textures": {"0": "zabutonmod:blocks/ocha"},
 	"elements": [
 		{
 			"name": "cube",

@@ -6,13 +6,17 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.stats.StatList;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
 public class OchaItem extends ItemBlock{
@@ -35,7 +39,8 @@ public class OchaItem extends ItemBlock{
     public OchaItem(Block block) {
 		super(block);
         this.healAmount = 1;
-
+        this.alwaysEdible = true;
+        //this.potionEffectProbability = setPotionEffect(Potion., .)
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
@@ -61,25 +66,42 @@ public class OchaItem extends ItemBlock{
      */
     public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving)
     {
-        if (entityLiving instanceof EntityPlayer)
+        EntityPlayer entityplayer = (EntityPlayer)entityLiving;
+
+        //EntityPlayerでクリエイティブモードでないとき（サバイバルモード）
+        if (entityLiving instanceof EntityPlayer && !entityplayer.capabilities.isCreativeMode)
         {
-            EntityPlayer entityplayer = (EntityPlayer)entityLiving;
-            //entityplayer.getFoodStats().addStats(this, stack);
-            //worldIn.playSound((EntityPlayer)null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
-            //this.onFoodEaten(stack, worldIn, entityplayer);
-            //entityplayer.addStat(StatList.getObjectUseStats(this));
+         	//ItemFood itemfood = this.healAmount;
+            entityplayer.getFoodStats().addStats(this.healAmount, 1.0F);
+            worldIn.playSound((EntityPlayer)null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
+            this.onFoodEaten(stack, worldIn, entityplayer);
+            entityplayer.addStat(StatList.getObjectUseStats(this));
             entityplayer.addPotionEffect(new PotionEffect(MobEffects.REGENERATION,100,2));
+            //アイテムを１個消費する
+            stack.shrink(1);
+
+        }
+        //EntityPlayerでクリエイティブモードのとき
+        else if (entityplayer.capabilities.isCreativeMode && entityLiving instanceof EntityPlayer)
+        {
+        	//ItemFood itemfood = this.healAmount;
+            entityplayer.getFoodStats().addStats(this.healAmount, 1.0F);
+            worldIn.playSound((EntityPlayer)null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
+            this.onFoodEaten(stack, worldIn, entityplayer);
+            entityplayer.addStat(StatList.getObjectUseStats(this));
+            entityplayer.addPotionEffect(new PotionEffect(MobEffects.REGENERATION,100,2));
+
+        }
 
             if (entityplayer instanceof EntityPlayerMP)
             {
                 CriteriaTriggers.CONSUME_ITEM.trigger((EntityPlayerMP)entityplayer, stack);
             }
-        }
 
-        stack.shrink(1);
+
         return stack;
     }
-/*
+
     protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)
     {
         if (!worldIn.isRemote && this.potionId != null && worldIn.rand.nextFloat() < this.potionEffectProbability)
@@ -88,12 +110,12 @@ public class OchaItem extends ItemBlock{
         }
     }
 
-*/    /**
+    /**
      * How long it takes to use or consume an item
      */
     public int getMaxItemUseDuration(ItemStack stack)
     {
-        return 16;
+        return 32;
     }
 
     /**
@@ -144,12 +166,12 @@ public class OchaItem extends ItemBlock{
 
     *//**
      * Whether wolves like this food (true for raw and cooked porkchop).
-     *//*
-    public boolean isWolfsFavoriteMeat()
+     */
+/*    public boolean isWolfsFavoriteMeat()
     {
         return this.isWolfsFavoriteMeat;
     }
-
+*/
     public ItemFood setPotionEffect(PotionEffect effect, float probability)
     {
         this.potionId = effect;
@@ -157,12 +179,12 @@ public class OchaItem extends ItemBlock{
         return null;
     }
 
-*/    /**
+    /**
      * Set the field 'alwaysEdible' to true, and make the food edible even if the player don't need to eat.
      */
-/*    public ItemFood setAlwaysEdible()
+    public ItemFood setAlwaysEdible()
     {
         this.alwaysEdible = true;
         return null;
-    }*/
+    }
 }

@@ -14,13 +14,13 @@ public class ZabutonModItems {
 	public static void init()
 	{
 		OchaItem = new OchaItem(ZabutonModBlocks.Ocha).setCreativeTab(ZabutonMod.ZabutonModTab).setUnlocalizedName("Ocha");
-		Yunomi = new Item().setCreativeTab(ZabutonMod.ZabutonModTab).setUnlocalizedName("Yumomi");
+		Yunomi = new Item().setCreativeTab(ZabutonMod.ZabutonModTab).setUnlocalizedName("Yunomi");
 	}
 
 	public static void register()
 	{
 		registerItem(OchaItem, "ochaitem");
-		registerItem(Yunomi, "yumomi");
+		registerItem(Yunomi, "yunomi");
 	}
 
 	public static void registerItem(Item item, String string)
