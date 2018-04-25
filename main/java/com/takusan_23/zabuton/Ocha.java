@@ -1,5 +1,7 @@
 package com.takusan_23.zabuton;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -11,12 +13,15 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class Ocha extends Block {
 
@@ -35,6 +40,16 @@ public class Ocha extends Block {
 			FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	   }
 
+	@SideOnly(Side.CLIENT)
+	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+	{
+        double d0 = (double)((float)pos.getX() + 0.4F + rand.nextFloat() * 0.2F);
+        double d1 = (double)((float)pos.getY() + 0.7F + rand.nextFloat() * 0.3F);
+        double d2 = (double)((float)pos.getZ() + 0.4F + rand.nextFloat() * 0.2F);
+
+        worldIn.spawnParticle(EnumParticleTypes.CLOUD, d0, d1, d2, 0.0D, 0.0D, 0.0D);
+	}
+	  
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
 	{
 		return new AxisAlignedBB(0.3125D, 0.0D, 0.3125D, 0.6875D, 0.4D, 0.6875D);
