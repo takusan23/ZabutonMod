@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "zabutonmod:kyuusu_block_finish" },
+        "facing=south": { "model": "zabutonmod:kyuusu_block_finish", "y": 180 },
+        "facing=west":  { "model": "zabutonmod:kyuusu_block_finish", "y": 270 },
+        "facing=east":  { "model": "zabutonmod:kyuusu_block_finish", "y": 90 }
+    }
+}

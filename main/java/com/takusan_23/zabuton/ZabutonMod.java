@@ -1,6 +1,7 @@
 package com.takusan_23.zabuton;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 	@Mod(modid = ZabutonMod.MOD_ID,
 	        name = ZabutonMod.MOD_NAME,
@@ -55,5 +57,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 	    {
 	    	proxy.init(event);
 	    	ZabutonModEntities.register();
+	    	GameRegistry.addSmelting(ZabutonModItems.Yunomi_unfinished, new ItemStack(ZabutonModItems.Yunomi), 0.1f);
 	    }
+
 }

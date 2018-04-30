@@ -2,6 +2,7 @@ itemGroup.ZabutonModTab=ざぶとんMOD
 
 item.Ocha.name=お茶
 item.Yunomi.name=湯のみ
+item.Yunomi(Unfinished).name = 湯のみ（未完成）
 
 tile.Zabuton.name=ざぶとん
 tile.Ocha.name=お茶

@@ -77,6 +77,7 @@ public class OchaItem extends ItemBlock{
             this.onFoodEaten(stack, worldIn, entityplayer);
             entityplayer.addStat(StatList.getObjectUseStats(this));
             entityplayer.addPotionEffect(new PotionEffect(MobEffects.REGENERATION,100,2));
+            entityplayer.addItemStackToInventory(new ItemStack(ZabutonModItems.Yunomi));
             //アイテムを１個消費する
             stack.shrink(1);
 
@@ -90,6 +91,8 @@ public class OchaItem extends ItemBlock{
             this.onFoodEaten(stack, worldIn, entityplayer);
             entityplayer.addStat(StatList.getObjectUseStats(this));
             entityplayer.addPotionEffect(new PotionEffect(MobEffects.REGENERATION,100,2));
+            entityplayer.addItemStackToInventory(new ItemStack(ZabutonModItems.Yunomi));
+
 
         }
 

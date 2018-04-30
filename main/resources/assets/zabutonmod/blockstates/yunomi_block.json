@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "zabutonmod:yunomi_block" },
+        "facing=south": { "model": "zabutonmod:yunomi_block", "y": 180 },
+        "facing=west":  { "model": "zabutonmod:yunomi_block", "y": 270 },
+        "facing=east":  { "model": "zabutonmod:yunomi_block", "y": 90 }
+    }
+}

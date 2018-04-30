@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "zabutonmod:yunomi_water"
+    }
+  ],
+  "result": {
+    "item": "zabutonmod:ochaitem"
+  }
+}

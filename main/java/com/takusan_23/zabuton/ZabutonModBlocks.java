@@ -12,15 +12,24 @@ public class ZabutonModBlocks {
 
 	public static Block Zabuton;
 	public static Block Ocha;
+	public static Block Yunomi;
+	public static Block Kyuusu;
+	public static Block Kyuusu_Finish;
 
 	public static void Init() {
 		Zabuton = new ZabutonBlock(Material.CLOTH);
 		Ocha = new Ocha(Material.ROCK);
+		Yunomi = new Yunomi_Block(Material.ROCK);
+		Kyuusu = new Kyuusu_Block(Material.ROCK);
+		Kyuusu_Finish = new Kyuusu_Finish_Block(Material.ROCK);
 	}
 
 	public static void register() {
 		registerItemBlock(Zabuton);
 		ForgeRegistries.BLOCKS.register(Ocha);
+		ForgeRegistries.BLOCKS.register(Kyuusu);
+		ForgeRegistries.BLOCKS.register(Kyuusu_Finish);
+		ForgeRegistries.BLOCKS.register(Yunomi);
 	}
 
 	public static void registerItemBlock(Block block) {
@@ -33,6 +42,9 @@ public class ZabutonModBlocks {
 	public static void registerRenders() {
 		regiserRender(Zabuton);
 		regiserRender(Ocha);
+		regiserRender(Yunomi);
+		regiserRender(Kyuusu);
+		regiserRender(Kyuusu_Finish);
 	}
 
 	public static void regiserRender(net.minecraft.block.Block block) {

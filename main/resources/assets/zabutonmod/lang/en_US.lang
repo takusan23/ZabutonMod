@@ -2,6 +2,7 @@ itemGroup.ZabutonModTab=ZabutonMod
 
 item.Ocha.name=Ocha
 item.Yunomi.name=Yunomi
+item.Yunomi(Unfinished).name = Yunomi(Unfinished)
 
 tile.Zabuton.name=Zabuton
 tile.Ocha.name=Ocha

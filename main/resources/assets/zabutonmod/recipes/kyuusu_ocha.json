@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "zabutonmod:kyuusu_water"
+    }
+  ],
+  "result": {
+    "item": "zabutonmod:kyuusu_ocha"
+  }
+}
