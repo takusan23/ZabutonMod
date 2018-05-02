@@ -1,8 +1,18 @@
 itemGroup.ZabutonModTab=ZabutonMod
 
 item.Ocha.name=Ocha
-item.Yunomi.name=Yunomi
-item.Yunomi(Unfinished).name = Yunomi(Unfinished)
+item.Yunomi.name=Teacup(湯のみ)
+item.Yunomi(Unfinished).name=Yunomi Unfinished
+item.Yunomi_Ocha.name=Teacup tea(お茶入り湯のみ)
+item.Kyuusu.name=Teapot(急須)
+item.Kyuusu_Water.name=Teapot Water(水入り急須)
+item
+item
+item
 
-tile.Zabuton.name=Zabuton
-tile.Ocha.name=Ocha
+tile.Zabuton.name=Japanese Cushion(ざぶとん)
+tile.Ocha.name=Tea(お茶)
+tile.Yunomi_Block.name=Teacup(湯のみ)
+tile.Kyuusu_Ocha_Block.name=Teacup Tea(お茶入り急須)
+tile.Kyuusu_Finish_Block.name=Teacup Complete(完成)
+

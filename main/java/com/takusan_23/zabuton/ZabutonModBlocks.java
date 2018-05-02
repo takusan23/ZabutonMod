@@ -20,7 +20,7 @@ public class ZabutonModBlocks {
 		Zabuton = new ZabutonBlock(Material.CLOTH);
 		Ocha = new Ocha(Material.ROCK);
 		Yunomi = new Yunomi_Block(Material.ROCK);
-		Kyuusu = new Kyuusu_Block(Material.ROCK);
+		Kyuusu = new Kyuusu_Ocha_Block(Material.ROCK);
 		Kyuusu_Finish = new Kyuusu_Finish_Block(Material.ROCK);
 	}
 

@@ -20,17 +20,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class Kyuusu_Block extends Block {
+public class Kyuusu_Ocha_Block extends Block {
 
 	public static final PropertyDirection FACING;
 
-	public Kyuusu_Block(Material materialIn) {
+	public Kyuusu_Ocha_Block(Material materialIn) {
 		super(Material.CIRCUITS);
 		setCreativeTab(ZabutonMod.ZabutonModTab);
 		setHardness(2.0F);
 		setSoundType(blockSoundType.STONE);
-		setUnlocalizedName("Kyuusu_Block");
-		setRegistryName("kyuusu_block");
+		setUnlocalizedName("Kyuusu_Ocha_Block");
+		setRegistryName("kyuusu_ocha_block");
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
 	  static {
