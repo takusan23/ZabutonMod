@@ -19,7 +19,7 @@ public class Kyuusu extends Item {
     {
         RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn, true);
         ItemStack itemstack = playerIn.getHeldItem(handIn);
-        BlockPos blockpos = raytraceresult.getBlockPos();
+        //BlockPos blockpos = raytraceresult.getBlockPos();
 
         if (raytraceresult == null)
         {
@@ -29,7 +29,8 @@ public class Kyuusu extends Item {
         {
             if (raytraceresult.typeOfHit == RayTraceResult.Type.BLOCK)
             {
-
+                BlockPos blockpos = raytraceresult.getBlockPos();
+                
                 if (worldIn.getBlockState(blockpos).getMaterial() == Material.WATER && !playerIn.capabilities.isCreativeMode)
                 {
                     worldIn.playSound(playerIn, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ITEM_BUCKET_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);

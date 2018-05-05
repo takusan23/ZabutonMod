@@ -6,6 +6,7 @@ item.Yunomi(Unfinished).name = 湯のみ（未完成）
 item.Yunomi_Ocha.name=お茶入り湯のみ
 item.Kyuusu.name=急須
 item.Kyuusu_Water.name=水入り急須
+item.Kyuusu_Unfinished.name=急須（未完成）
 
 tile.Zabuton.name=ざぶとん
 tile.Ocha.name=お茶

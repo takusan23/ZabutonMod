@@ -23,7 +23,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 	public class ZabutonMod{
 	    public static final String MOD_ID = "zabutonmod";
 	    public static final String MOD_NAME = "Zabuton Mod";
-	    public static final String MOD_VERSION = "Depelopper Version 1.0";
+	    public static final String MOD_VERSION = "Developper Version 1.0";
 	    public static final String MOD_DEPENDENCIES ="required-after:forge@[1.12.2-14.23.2.2655,)";
 	    public static final String MOD_ACCEPTED_MC_VERSIONS = "[1.12.2]";
 	    public static final String CLIENT_PROXY_CLASS = "com.takusan_23.zabuton.proxy.ClientProxy";
@@ -58,6 +58,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 	    	proxy.init(event);
 	    	ZabutonModEntities.register();
 	    	GameRegistry.addSmelting(ZabutonModItems.Yunomi_unfinished, new ItemStack(ZabutonModItems.Yunomi), 0.1f);
+	    	GameRegistry.addSmelting(ZabutonModItems.Kyuusu_Unfinished, new ItemStack(ZabutonModItems.Kyuusu), 0.1f);
 	    }
 
 }

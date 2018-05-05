@@ -19,6 +19,8 @@ public class ZabutonModItems {
 	public static Item Kyuusu_Water;
 	public static Item Kyuusu_Ocha;
 	public static Item Kyuusu_Finish;
+	public static Item Yunomi_Creative;
+	public static Item Kyuusu_Unfinished;
 
 	public static void init()
 	{
@@ -31,6 +33,8 @@ public class ZabutonModItems {
 		Kyuusu_Water = new Kyuusu_Water().setCreativeTab(ZabutonMod.ZabutonModTab).setUnlocalizedName("Kyuusu_Water");
 		Kyuusu_Ocha = new Kyuusu_Ocha(ZabutonModBlocks.Kyuusu).setCreativeTab(ZabutonMod.ZabutonModTab).setUnlocalizedName("Kyuusu_Ocha");
 		Kyuusu_Finish = new Kyuusu_Finish(ZabutonModBlocks.Kyuusu_Finish).setCreativeTab(ZabutonMod.ZabutonModTab).setUnlocalizedName("Kyuusu_Finish");
+		Yunomi_Creative = new Yunomi_Creative().setCreativeTab(ZabutonMod.ZabutonModTab).setUnlocalizedName("Yunomi Creative");
+		Kyuusu_Unfinished = new Item().setCreativeTab(ZabutonMod.ZabutonModTab).setUnlocalizedName("Kyuusu_Unfinished");
 	}
 
 	public static void register()
@@ -43,6 +47,8 @@ public class ZabutonModItems {
 		registerItem(Kyuusu_Water,"kyuusu_water");
 		registerItem(Kyuusu_Ocha,"kyuusu_ocha");
 		registerItem(Kyuusu_Finish ,"kyuusu_finish");
+		registerItem(Yunomi_Creative,"yunomi_creative");
+		registerItem(Kyuusu_Unfinished, "kyuusu_unfinished");
 	}
 
 	public static void registerItem(Item item, String string)
@@ -61,7 +67,8 @@ public class ZabutonModItems {
 		registerRender(Kyuusu_Water);
 		registerRender(Kyuusu_Ocha);
 		registerRender(Kyuusu_Finish);
-
+		registerRender(Yunomi_Creative);
+		registerRender(Kyuusu_Unfinished);
 	}
 
 	public static void registerRender(Item item)
